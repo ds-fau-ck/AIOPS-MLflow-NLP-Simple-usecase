@@ -6,7 +6,7 @@ import logging
 from src.utils.common import read_yaml, create_directories
 from src.utils.data_mgmt import process_posts
 import random
-
+import mlflow
 
 STAGE = "One"
 
@@ -21,13 +21,15 @@ def main(config_path, params_path):
     ## converting XML data tsv
     config = read_yaml(config_path)
     params = read_yaml(params_path)
+    
 
     source_data = config["source_data"]
     input_data = os.path.join(source_data["data_dir"], source_data["data_file"])
 
     split = params["prepare"]["split"]
     seed = params["prepare"]["seed"]
-
+    mlflow.log_param("split", split)
+    mlflow.log_param("seed","seed")
     random.seed(seed)
 
     artifacts = config["artifacts"]
