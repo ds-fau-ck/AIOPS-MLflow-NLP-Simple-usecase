@@ -1,5 +1,5 @@
 # dvc-NLP-simple-usecase
-DVC NLP project
+ mlflow NLP project
 
 ## Reference repository:
 * [official reference repo](https://github.com/iterative/example-get-started)
@@ -61,4 +61,3 @@ echo "*.log" >> logs/.gitignore
 git rm --cached logs/running_logs.log
 ```
 
-updated by rohan 
